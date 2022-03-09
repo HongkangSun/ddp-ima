@@ -1,11 +1,13 @@
-<style>
- body{text-align: center;}
- body{background-color: #A9A9A9;}
-</style>
-
-body {
+p.row {
     margin: 0;
     font-family: 'League Spartan', sans-serif;
-    font-size: 80px;
+    font-size: 30px;
     line-height: 30px;
+}
+
+p{margin: 0;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+
 }
