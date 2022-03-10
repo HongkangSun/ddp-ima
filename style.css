@@ -1,8 +1,8 @@
 p.row {
     margin: 0;
     font-family: 'League Spartan', sans-serif;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 25px;
+    line-height: 25px;
 }
 
 p{margin: 0;
@@ -11,9 +11,11 @@ p{margin: 0;
     line-height: 20px;
 
 }
-header h4{margin: 0;
+h4{margin: 0;
     font-family: 'League Spartan', sans-serif;
     font-size: 25px;
     line-height: 20px;
-
+}
+h1 {
+    background-color: #696969;
 }
