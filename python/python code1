@@ -1,0 +1,71 @@
+# use morse code to represent letters
+MORSE_CODE = { 'A':'.-', 'B':'-...','C':'-.-.', 'D':'-..', 'E':'.',
+                    'F':'..-.', 'G':'--.', 'H':'....','I':'..', 'J':'.---', 'K':'-.-',
+                    'L':'.-..', 'M':'--', 'N':'-.','O':'---', 'P':'.--.', 'Q':'--.-',
+                    'R':'.-.', 'S':'...', 'T':'-','U':'..-', 'V':'...-', 'W':'.--',
+                    'X':'-..-', 'Y':'-.--', 'Z':'--..'}
+ 
+# encrypt the string function
+def encrypt(message):
+    cipher = ''
+    for letter in message:
+        if letter != ' ':
+ 
+            # Looks up the dictionary and adds the
+            # correspponding morse code
+            # along with a space to separate
+            # morse codes for different characters
+            cipher += MORSE_CODE[letter] + ' '
+        else:
+            # 1 space indicates different characters
+            # and 2 indicates different words
+            cipher += ' '
+ 
+    return cipher
+ 
+# Function to decrypt the string
+# from morse to english
+def decrypt(message):
+ 
+    # add spaceat 
+    message += ' '
+ 
+    decipher = ''
+    citext = ''
+    for letter in message:
+ 
+        # space
+        if (letter != ' '):
+ 
+            i = 0
+ 
+            # storing morse code of a single character
+            citext += letter
+ 
+        else:
+            # if i = 1 that indicates a new character
+            i += 1
+ 
+            # if i = 2 that indicates a new word
+            if i == 2 :
+ 
+                decipher += ' '
+            else:
+ 
+                # accessing the keys using their values (reverse of encryption)
+                decipher += list(MORSE_CODE.keys())[list(MORSE_CODE
+                .values()).index(citext)]
+                citext = ''
+ 
+    return decipher
+ 
+# Hard-coded driver function to run the program
+def main():
+    message = "HELLO WORLD"
+    result = encrypt(message.upper())
+    print (result)
+
+ 
+# Executes the main function
+if __name__ == '__main__':
+    main()
