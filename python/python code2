@@ -1,0 +1,13 @@
+def unique_letters(s):
+    t=s.replace(' ','')
+    string=''
+    strcount=0
+    for str in t:
+        if str not in string:
+            string+=str
+            strcount+=1
+    string=list(string.upper())
+    output=(string,strcount)
+    print(output)
+    return
+unique_letters('hello world')
