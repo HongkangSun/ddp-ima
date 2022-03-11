@@ -1,0 +1,18 @@
+1.	SELECT count(*) FROM orders WHERE category_id = 2 ;
+Answer: 23
+2.	SELECT count(*) FROM `orders` WHERE `category_id` IN (2,4,5);
+Answer: 66
+3.	SELECT count(*) FROM `orders` WHERE price >35
+Answer: 71
+4.	SELECT count(*) FROM `orders` WHERE `date_of_birth` < '1980-01-01' AND `newsletter`= '1';
+Answer: 35
+5.	SELECT count(*) FROM orders WHERE `customer_firstname` = "Davenport" OR `customer_surname` = "Davenport"
+Answer: 7
+6.	SELECT * FROM `orders` WHERE `customer_firstname` LIKE 'Br%'
+Answer: Bradley Suarez
+7.	SELECT * FROM `orders` WHERE `category_id` = 3 ORDER BY `price`DESC;
+8.	SELECT `trans_date` as 'Transaction Date', `price` as 'Price', `promo_code` as 'Promotion Code' FROM `orders`;
+9.	SELECT CONCAT(UPPER(`customer_surname`) ,' ' , `customer_firstname`) as 'Customer Name', `county` as 'Country' FROM `orders`
+10.	SELECT `category_id`, AVG(`price`), MIN(`price`), MAX(`price`) FROM `orders` GROUP BY `category_id`;
+11.	SELECT `category_id`, SUM (product_id) as 'Total Orders', SUM (product_id * price) as 'Total Sales' FROM `orders` GROUP BY `category_id`
+12.	SELECT * FROM (`orders` o JOIN `promotions` p ON ( o.promo_code = p.code )) JOIN `categories` c ON ( o.category_id = c.id );
